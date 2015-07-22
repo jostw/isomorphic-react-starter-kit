@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/jostw/isomorphic-react-starter-kit/issues"
   },
-  "homepage": "https://github.com/jostw/isomorphic-react-starter-kit"
+  "homepage": "https://github.com/jostw/isomorphic-react-starter-kit",
+  "devDependencies": {
+    "react": "^0.13.3"
+  }
 }
