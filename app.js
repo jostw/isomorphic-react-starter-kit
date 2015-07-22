@@ -9,12 +9,16 @@
 
 "use strict";
 
+import fs from "fs";
+import path from "path";
+
 import express from "express";
 
+const index = fs.readFileSync(path.resolve(__dirname, "template/index.html")).toString();
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("Hello world!");
+    res.send(index);
 });
 
 const server = app.listen(3000, () => {
