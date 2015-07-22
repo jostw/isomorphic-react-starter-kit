@@ -1,0 +1,23 @@
+{
+  "name": "isomorphic-react-starter-kit",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jostw/isomorphic-react-starter-kit",
+  "authors": [
+    "jos <mail@jos.tw>"
+  ],
+  "description": "Starter kit for isomorphic React and Flux application.",
+  "main": "app.js",
+  "keywords": [
+    "isomorphic",
+    "react",
+    "flux"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
