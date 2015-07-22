@@ -21,6 +21,8 @@ app.get("/", (req, res) => {
     res.send(index);
 });
 
+app.use(express.static("public"));
+
 const server = app.listen(3000, () => {
     const host = server.address().address;
     const port = server.address().port;

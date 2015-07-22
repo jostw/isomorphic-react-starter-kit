@@ -4,8 +4,8 @@
   "description": "Starter kit for isomorphic React and Flux application.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node app.js"
+    "build": "webpack -p",
+    "postbuild": "babel-node app.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "babel": "^5.8.3",
+    "babel-core": "^5.8.3",
+    "babel-loader": "^5.3.2",
     "express": "^4.13.1",
     "node-libs-browser": "^0.5.2",
     "webpack": "^1.10.1"
