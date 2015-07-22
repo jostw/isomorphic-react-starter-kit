@@ -9,4 +9,6 @@
 
 "use strict";
 
+import "normalize.css";
+
 import "./vendor/plugins";
