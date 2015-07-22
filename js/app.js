@@ -11,4 +11,5 @@
 
 import "normalize.css";
 
+import "imports?this=>window!modernizr";
 import "./vendor/plugins";

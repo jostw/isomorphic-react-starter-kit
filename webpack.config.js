@@ -10,10 +10,15 @@
 "use strict";
 
 var path = require("path");
+var webpack = require("webpack");
 
 module.exports = {
     entry: {
         script: path.resolve(__dirname, "js/app.js")
+    },
+
+    resolve: {
+        root: [path.resolve(__dirname, "bower_components")]
     },
 
     module: {
@@ -23,11 +28,17 @@ module.exports = {
                 loader: "style!css"
             }, {
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
+                exclude: /node_modules|modernizr/,
                 loader: "babel"
             }
         ]
     },
+
+    plugins: [
+        new webpack.ResolverPlugin(
+            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["_originalSource"])
+        )
+    ],
 
     output: {
         path: path.resolve(__dirname, "public/js"),
