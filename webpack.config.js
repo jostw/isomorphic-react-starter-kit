@@ -27,9 +27,6 @@ module.exports = {
                 test: /\.css$/,
                 loader: "style!css"
             }, {
-                test: /\.scss$/,
-                loader: "style!css!sass"
-            }, {
                 test: /\.jsx?$/,
                 exclude: /node_modules|modernizr/,
                 loader: "babel"

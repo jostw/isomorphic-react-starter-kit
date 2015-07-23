@@ -12,5 +12,5 @@
 import "normalize.css";
 import "imports?this=>window!modernizr";
 
-import "../scss/vendor/boilerplate.scss";
+import "../css/vendor/boilerplate.css";
 import "./vendor/plugins";
