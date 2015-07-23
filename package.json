@@ -4,6 +4,10 @@
   "description": "Starter kit for isomorphic React and Flux application.",
   "main": "app.js",
   "scripts": {
+    "copy:html5shiv": "cp bower_components/html5shiv/dist/html5shiv.min.js public/js/vendor/",
+    "copy:respond": "cp bower_components/respond/dest/respond.min.js public/js/vendor/",
+    "copy:vendor": "npm run copy:html5shiv & npm run copy:respond",
+    "prebuild": "npm run copy:vendor",
     "build": "webpack -p",
     "postbuild": "babel-node app.js"
   },
