@@ -12,9 +12,19 @@
 var path = require("path");
 var webpack = require("webpack");
 
+var isDev = process.argv[1].match("webpack-dev-server");
+
 module.exports = {
     entry: {
-        script: path.resolve(__dirname, "js/app.js")
+        script: (function() {
+            var script = path.resolve(__dirname, "js/app.js");
+
+            if (isDev) {
+                script = ["webpack/hot/dev-server", script];
+            }
+
+            return script;
+        })()
     },
 
     resolve: {
@@ -42,6 +52,8 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, "public/js"),
+        publicPath: "http://localhost:8080/js/",
+
         filename: "[name].js"
     }
 };

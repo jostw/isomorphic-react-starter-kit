@@ -14,7 +14,11 @@ import path from "path";
 
 import express from "express";
 
-const index = fs.readFileSync(path.resolve(__dirname, "template/index.html")).toString();
+let index = fs.readFileSync(path.resolve(__dirname, "template/index.html")).toString();
+
+index = index.replace("<script src=\"/js/script.js\"></script>", "<script src=\"http://localhost:8080/js/script.js\"></script>");
+index = index.replace("<!-- webpack-dev-server -->", "<script src=\"http://localhost:8080/webpack-dev-server.js\"></script>");
+
 const app = express();
 
 app.get("/", (req, res) => {

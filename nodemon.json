@@ -1,0 +1,6 @@
+{
+  "ignore": "js/",
+  "execMap": {
+    "js": "babel-node"
+  }
+}
