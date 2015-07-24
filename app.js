@@ -15,7 +15,7 @@ import path from "path";
 import express from "express";
 import browserSync from "browser-sync";
 
-const isDev = process.argv[2] && process.argv[2].match("dev");
+const isDev = ((argv) => argv && argv.match("dev"))(process.argv[2]);
 const app = express();
 
 app.get("/", (req, res) => {
