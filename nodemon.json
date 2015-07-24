@@ -1,5 +1,8 @@
 {
-  "ignore": "js/",
+  "watch": [
+    "app.js"
+  ],
+  "ext": "js",
   "execMap": {
     "js": "babel-node"
   }

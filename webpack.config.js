@@ -12,7 +12,7 @@
 var path = require("path");
 var webpack = require("webpack");
 
-var isDev = process.argv[1].match("webpack-dev-server");
+var isDev = process.argv[1].match("dev");
 
 module.exports = {
     entry: {
@@ -50,9 +50,13 @@ module.exports = {
         )
     ],
 
+    devServer: {
+        port: 3001
+    },
+
     output: {
         path: path.resolve(__dirname, "public/js"),
-        publicPath: "http://localhost:8080/js/",
+        publicPath: "http://localhost:3001/js/",
 
         filename: "[name].js"
     }

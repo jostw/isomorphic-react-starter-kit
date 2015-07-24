@@ -8,7 +8,7 @@
     "copy:html5shiv": "cp bower_components/html5shiv/dist/html5shiv.min.js public/js/vendor/",
     "copy:respond": "cp bower_components/respond/dest/respond.min.js public/js/vendor/",
     "copy:vendor": "npm run copy:html5shiv & npm run copy:respond",
-    "start": "npm install && nodemon app.js & webpack-dev-server --hot",
+    "start": "npm install && nodemon app.js --dev & webpack-dev-server --hot",
     "build": "npm install && webpack -p",
     "postbuild": "babel-node app.js"
   },
@@ -36,6 +36,7 @@
     "babel-core": "^5.8.3",
     "babel-loader": "^5.3.2",
     "bower": "^1.4.1",
+    "browser-sync": "^2.8.0",
     "css-loader": "^0.15.5",
     "express": "^4.13.1",
     "imports-loader": "^0.6.4",
