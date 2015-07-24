@@ -22,7 +22,11 @@ module.exports = {
             var script = path.resolve(__dirname, "js/app.js");
 
             if (isDev) {
-                script = ["webpack/hot/dev-server", script];
+                script = [
+                    "webpack-dev-server/client?http://localhost:" + config.port.webpack,
+                    "webpack/hot/dev-server",
+                    script
+                ];
             }
 
             return script;

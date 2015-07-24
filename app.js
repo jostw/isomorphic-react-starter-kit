@@ -25,7 +25,6 @@ app.get("/", (req, res) => {
 
     if (isDev) {
         index = index.replace("<script src=\"/js/script.js\"></script>", "<script src=\"http://localhost:" + config.port.webpack + "/js/script.js\"></script>");
-        index = index.replace("<!-- webpack-dev-server -->", "<script src=\"http://localhost:" + config.port.webpack + "/webpack-dev-server.js\"></script>");
         index = index.replace("<!-- browser-sync -->", "<script async src=\"http://localhost:" + config.port.browserSync + "/browser-sync/browser-sync-client.js\"></script>");
     }
 
