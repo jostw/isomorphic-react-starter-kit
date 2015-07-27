@@ -20,7 +20,7 @@ import Router from "react-router";
 
 import Route from "./components/Route.jsx";
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     Router.run(Route, Router.HistoryLocation, (Root) => {
         React.render(React.createElement(Root), document.getElementById("app"));
     });
