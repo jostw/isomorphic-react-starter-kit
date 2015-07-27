@@ -12,7 +12,7 @@
 var path = require("path");
 var webpack = require("webpack");
 
-var config = require(path.resolve(__dirname, "js/app/config"));
+var config = require(path.resolve(__dirname, "config"));
 
 var isDev = process.argv[1].match("dev");
 

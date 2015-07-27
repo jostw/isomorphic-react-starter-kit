@@ -18,6 +18,7 @@ import browserSync from "browser-sync";
 import React from "react";
 import Router from "react-router";
 
+import { port } from "./config";
 import config from "./js/app/config";
 import request from "./js/app/request";
 import Route from "./js/components/Route.jsx";
@@ -55,8 +56,8 @@ app.use((req, res) => {
     let index = fs.readFileSync(path.resolve(__dirname, "template/index.html")).toString();
 
     if (isDev) {
-        index = index.replace("<script src=\"/js/script.js\"></script>", "<script src=\"http://localhost:" + config.port.webpack + "/js/script.js\"></script>");
-        index = index.replace("<!-- browser-sync -->", "<script async src=\"http://localhost:" + config.port.browserSync + "/browser-sync/browser-sync-client.js\"></script>");
+        index = index.replace("<script src=\"/js/script.js\"></script>", "<script src=\"http://localhost:" + port.webpack + "/js/script.js\"></script>");
+        index = index.replace("<!-- browser-sync -->", "<script async src=\"http://localhost:" + port.browserSync + "/browser-sync/browser-sync-client.js\"></script>");
     }
 
     router.run((Root) => {
@@ -75,11 +76,10 @@ app.use((req, res) => {
     });
 });
 
-const server = app.listen(config.port.app, () => {
+const server = app.listen(port.app, () => {
     const host = server.address().address;
-    const port = server.address().port;
 
-    console.log("Server listening at http://%s:%s", host, port);
+    console.log("Server listening at http://%s:%s", host, port.app);
 
     if (isDev) {
         const browserSyncServer = browserSync.create();
@@ -90,7 +90,7 @@ const server = app.listen(config.port.app, () => {
             logSnippet: false,
             reloadOnRestart: true,
 
-            port: config.port.browserSync
+            port: port.browserSync
         });
     }
 });

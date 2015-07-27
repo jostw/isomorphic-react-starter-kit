@@ -9,9 +9,10 @@
 
 "use strict";
 
-export default {
-    path: {
-        home: "/",
-        about: "/about"
+module.exports = {
+    port: {
+        app: 3000,
+        webpack: 3001,
+        browserSync: 3002
     }
 };
