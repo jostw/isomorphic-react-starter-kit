@@ -16,7 +16,7 @@ class Home extends React.Component {
         return (
             <div>
                 <h1>There's no place like home.</h1>
-                <div>{ this.props.time }</div>
+                <div>{ this.props.data.time }</div>
             </div>
         );
     }

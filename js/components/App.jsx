@@ -19,7 +19,7 @@ class App extends React.Component {
         return (
             <div>
                 <Nav />
-                <RouteHandler />
+                <RouteHandler data={ this.props.data } />
             </div>
         );
     }

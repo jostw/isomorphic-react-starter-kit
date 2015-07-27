@@ -14,5 +14,10 @@ module.exports = {
         app: 3000,
         webpack: 3001,
         browserSync: 3002
+    },
+
+    path: {
+        home: "/",
+        about: "/about"
     }
 };

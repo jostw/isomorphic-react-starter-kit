@@ -18,10 +18,15 @@ import "./vendor/plugins";
 import React from "react";
 import Router from "react-router";
 
+import request from "./app/request";
 import Route from "./components/Route.jsx";
 
 document.addEventListener("DOMContentLoaded", () => {
-    Router.run(Route, Router.HistoryLocation, (Root) => {
-        React.render(React.createElement(Root), document.getElementById("app"));
+    Router.run(Route, Router.HistoryLocation, (Root, state) => {
+        request(state.path, (data) => {
+            const root = React.createElement(Root, { data: data });
+
+            React.render(root, document.getElementById("app"));
+        });
     });
 });

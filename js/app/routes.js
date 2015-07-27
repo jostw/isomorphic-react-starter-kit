@@ -9,6 +9,8 @@
 
 "use strict";
 
+import config from "./config";
+
 import Home from "../components/Home.jsx";
 import About from "../components/About.jsx";
 
@@ -16,12 +18,12 @@ export default [
     {
         title: "Home",
         name: "home",
-        path: "/",
+        path: config.path.home,
         handler: Home
     }, {
         title: "About",
         name: "about",
-        path: "/about",
+        path: config.path.about,
         handler: About
     }
 ];

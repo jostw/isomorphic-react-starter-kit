@@ -19,10 +19,33 @@ import React from "react";
 import Router from "react-router";
 
 import config from "./js/app/config";
+import request from "./js/app/request";
 import Route from "./js/components/Route.jsx";
 
 const isDev = ((argv) => argv && argv.match("dev"))(process.argv[2]);
 const app = express();
+
+let requestCount, requestTime;
+
+app.get(config.path.home, (req, res, next) => {
+    if (req.xhr) {
+        requestCount++;
+
+        res.send({ time: requestCount > 2 ? new Date() : requestTime });
+    } else {
+        next();
+    }
+});
+
+app.get(config.path.about, (req, res, next) => {
+    if (req.xhr) {
+        requestCount++;
+
+        res.send({ time: requestCount > 2 ? new Date() : requestTime });
+    } else {
+        next();
+    }
+});
 
 app.use(express.static("public"));
 
@@ -36,10 +59,19 @@ app.use((req, res) => {
         index = index.replace("<!-- browser-sync -->", "<script async src=\"http://localhost:" + config.port.browserSync + "/browser-sync/browser-sync-client.js\"></script>");
     }
 
-    router.run((Handler) => {
-        index = index.replace("<!-- react -->", React.renderToString(React.createElement(Handler)));
+    router.run((Root) => {
+        const url = "http://" + req.headers.host + req.url;
 
-        res.send(index);
+        requestCount = 0;
+        requestTime = new Date();
+
+        request(url, (data) => {
+            const root = React.createElement(Root, { data: data });
+
+            index = index.replace("<!-- react -->", React.renderToString(root));
+
+            res.send(index);
+        });
     });
 });
 
