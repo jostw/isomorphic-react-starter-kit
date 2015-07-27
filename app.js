@@ -15,12 +15,20 @@ import path from "path";
 import express from "express";
 import browserSync from "browser-sync";
 
+import React from "react";
+import Router from "react-router";
+
 import config from "./js/app/config";
+import Route from "./js/components/Route.jsx";
 
 const isDev = ((argv) => argv && argv.match("dev"))(process.argv[2]);
 const app = express();
 
-app.get("/", (req, res) => {
+app.use(express.static("public"));
+
+app.use((req, res) => {
+    const router = Router.create({ location: req.url, routes: Route });
+
     let index = fs.readFileSync(path.resolve(__dirname, "template/index.html")).toString();
 
     if (isDev) {
@@ -28,10 +36,12 @@ app.get("/", (req, res) => {
         index = index.replace("<!-- browser-sync -->", "<script async src=\"http://localhost:" + config.port.browserSync + "/browser-sync/browser-sync-client.js\"></script>");
     }
 
-    res.send(index);
-});
+    router.run((Handler) => {
+        index = index.replace("<!-- react -->", React.renderToString(React.createElement(Handler)));
 
-app.use(express.static("public"));
+        res.send(index);
+    });
+});
 
 const server = app.listen(config.port.app, () => {
     const host = server.address().address;
