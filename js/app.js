@@ -16,15 +16,12 @@ import "../css/vendor/boilerplate.css";
 import "./vendor/plugins";
 
 import React from "react";
+import Router from "react-router";
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>Hello React!</div>
-        );
-    }
-}
+import Route from "./components/Route.jsx";
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    React.render(<App />, document.getElementById("app"));
+document.addEventListener("DOMContentLoaded", function() {
+    Router.run(Route, Router.HistoryLocation, (Root) => {
+        React.render(React.createElement(Root), document.getElementById("app"));
+    });
 });
