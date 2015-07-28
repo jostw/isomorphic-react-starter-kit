@@ -11,7 +11,8 @@
     "pretest": "npm install",
     "jshint": "jshint *.js",
     "eslint": "eslint *.js",
-    "test": "npm run jshint & npm run eslint",
+    "jscs": "jscs *.js",
+    "test": "npm run jshint & npm run eslint & npm run jscs",
     "start": "npm test && nodemon app.js --dev & webpack-dev-server --hot",
     "build": "npm test && webpack -p",
     "postbuild": "babel-node app.js"
@@ -48,6 +49,8 @@
     "eslint-loader": "^0.14.2",
     "express": "^4.13.1",
     "imports-loader": "^0.6.4",
+    "jscs": "^1.13.1",
+    "jscs-loader": "^0.1.0",
     "jshint": "^2.8.0",
     "jshint-loader": "^0.8.3",
     "node-libs-browser": "^0.5.2",

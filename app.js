@@ -26,7 +26,8 @@ import Route from "./js/components/Route.jsx";
 const isDev = ((argv) => argv && argv.match("dev"))(process.argv[2]);
 const app = express();
 
-let requestCount, requestTime;
+let requestCount;
+let requestTime;
 
 app.get(config.path.home, (req, res, next) => {
     if (req.xhr) {

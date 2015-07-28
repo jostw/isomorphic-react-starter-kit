@@ -1,0 +1,12 @@
+{
+    "preset"                                        : "google",
+    "esnext"                                        : true,
+    "validateIndentation"                           : 4,
+    "validateQuoteMarks"                            : "\"",
+    "maximumLineLength"                             : null,
+    "disallowMultipleVarDecl"                       : null,
+    "disallowSpacesInsideObjectBrackets"            : null,
+    "disallowSpacesInAnonymousFunctionExpression"   : null,
+    "requireCurlyBraces"                            : null,
+    "requireLineFeedAtFileEnd"                      : null
+}
