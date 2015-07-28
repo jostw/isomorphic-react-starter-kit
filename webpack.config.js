@@ -44,8 +44,8 @@ module.exports = {
                 loader: "style!css"
             }, {
                 test: /\.jsx?$/,
-                exclude: /node_modules|modernizr/,
-                loader: "jshint!babel"
+                exclude: /node_modules|modernizr|plugins/,
+                loader: "eslint!jshint!babel"
             }
         ]
     },
