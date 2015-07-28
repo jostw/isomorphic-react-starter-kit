@@ -23,7 +23,7 @@ import Route from "./components/Route.jsx";
 
 document.addEventListener("DOMContentLoaded", () => {
     Router.run(Route, Router.HistoryLocation, (Root, state) => {
-        request(state.path, (data) => {
+        request.get(state.path, (data) => {
             const root = React.createElement(Root, { data: data });
 
             React.render(root, document.getElementById("app"));

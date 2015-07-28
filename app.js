@@ -66,7 +66,7 @@ app.use((req, res) => {
         requestCount = 0;
         requestTime = new Date();
 
-        request(url, (data) => {
+        request.get(url, (data) => {
             const root = React.createElement(Root, { data: data });
 
             index = index.replace("<!-- react -->", React.renderToString(root));

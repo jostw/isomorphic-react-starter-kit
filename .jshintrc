@@ -1,0 +1,10 @@
+{
+    "esnext"    : true,
+    "proto"     : true,
+    "shadow"    : true,
+    "browser"   : true,
+    "node"      : true,
+    "globals"   : {
+        "parent": true
+    }
+}

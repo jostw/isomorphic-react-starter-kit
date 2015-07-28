@@ -11,13 +11,15 @@
 
 import request from "superagent";
 
-export default (url, callback) => {
-    request
-        .get(url)
-        .set("X-Requested-With", "XMLHttpRequest")
-        .end((err, res) => {
-            if (!err) {
-                callback(res.body);
-            }
-        });
+export default {
+    get: (url, callback) => {
+        request
+            .get(url)
+            .set("X-Requested-With", "XMLHttpRequest")
+            .end((err, res) => {
+                if (!err) {
+                    callback(res.body);
+                }
+            });
+    }
 };

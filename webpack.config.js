@@ -45,7 +45,7 @@ module.exports = {
             }, {
                 test: /\.jsx?$/,
                 exclude: /node_modules|modernizr/,
-                loader: "babel"
+                loader: "jshint!babel"
             }
         ]
     },
