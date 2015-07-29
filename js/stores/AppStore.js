@@ -10,6 +10,8 @@
 "use strict";
 
 import alt from "../app/alt";
+import routes from "../app/routes";
+
 import AppActions from "../actions/AppActions";
 
 class AppStore {
@@ -19,6 +21,7 @@ class AppStore {
         });
 
         this.state = {
+            routes: routes,
             time: null
         };
     }

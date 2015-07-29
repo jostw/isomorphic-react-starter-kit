@@ -31,7 +31,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Nav />
+                <Nav routes={ this.props.routes } />
                 <RouteHandler time={ this.props.time } data={ this.props.data } />
                 <button onClick={ this.updateTime }>update</button>
             </div>
@@ -46,6 +46,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+    routes: React.PropTypes.array.isRequired,
     time: React.PropTypes.string,
     data: React.PropTypes.object.isRequired
 };

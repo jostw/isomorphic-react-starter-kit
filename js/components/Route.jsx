@@ -17,10 +17,6 @@ import routes from "../app/routes";
 
 export default (
     <Route handler={ App }>{
-        routes.map((route, index) => {
-            return (
-                <Route key={ index } name={ route.name } path={ route.path } handler={ route.handler } />
-            );
-        })
+        routes.map((route, index) => <Route key={ index } name={ route.name } path={ route.path } handler={ route.handler } />)
     }</Route>
 );

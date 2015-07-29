@@ -12,14 +12,12 @@
 import React from "react";
 import { Link } from "react-router";
 
-import routes from "../app/routes";
-
 class Nav extends React.Component {
     render() {
         return (
             <nav>
                 <ul>{
-                    routes.map((route, index) => {
+                    this.props.routes.map((route, index) => {
                         return (
                             <li key={ index }>
                                 <Link to={ route.name }>{ route.title }</Link>
@@ -31,5 +29,9 @@ class Nav extends React.Component {
         );
     }
 }
+
+Nav.propTypes = {
+    routes: React.PropTypes.array.isRequired
+};
 
 export default Nav;
