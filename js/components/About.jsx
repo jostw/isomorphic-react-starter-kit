@@ -16,7 +16,7 @@ class About extends React.Component {
         return (
             <div>
                 <h1>The first rule of Fight Club is: you do not talk about Fight Club.</h1>
-                <div>{ this.props.data.time }</div>
+                <div>{ this.props.time || this.props.data.time }</div>
             </div>
         );
     }

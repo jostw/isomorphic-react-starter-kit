@@ -12,17 +12,37 @@
 import React from "react";
 import { RouteHandler } from "react-router";
 
+import connectToStores from "alt/utils/connectToStores";
+
+import AppActions from "../actions/AppActions";
+import AppStore from "../stores/AppStore";
+
 import Nav from "./Nav.jsx";
 
 class App extends React.Component {
+    static getStores() {
+        return [AppStore];
+    }
+
+    static getPropsFromStores() {
+        return AppStore.getState();
+    }
+
     render() {
         return (
             <div>
                 <Nav />
-                <RouteHandler data={ this.props.data } />
+                <RouteHandler time={ this.props.time } data={ this.props.data } />
+                <button onClick={ this.updateTime }>update</button>
             </div>
         );
     }
+
+    updateTime(e) {
+        e.preventDefault();
+
+        AppActions.updateTime(new Date().toISOString());
+    }
 }
 
-export default App;
+export default { connectToStores }.connectToStores(App);
