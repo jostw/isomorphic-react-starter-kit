@@ -11,6 +11,7 @@
 
 import React from "react";
 import { Link } from "react-router";
+import { List } from "immutable";
 
 class Nav extends React.Component {
     render() {
@@ -31,7 +32,7 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
-    routes: React.PropTypes.array.isRequired
+    routes: React.PropTypes.instanceOf(List).isRequired
 };
 
 export default Nav;

@@ -9,6 +9,9 @@
 
 "use strict";
 
+import Immutable from "immutable";
+import immutable from "alt/utils/ImmutableUtil";
+
 import alt from "../app/alt";
 import routes from "../app/routes";
 
@@ -21,7 +24,7 @@ class AppStore {
         });
 
         this.state = {
-            routes: routes,
+            routes: Immutable.List(routes),
             time: null
         };
     }
@@ -31,4 +34,4 @@ class AppStore {
     }
 }
 
-export default alt.createStore(AppStore, "AppStore");
+export default alt.createStore({ immutable }.immutable(AppStore), "AppStore");

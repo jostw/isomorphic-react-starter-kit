@@ -11,6 +11,7 @@
 
 import React from "react";
 import { RouteHandler } from "react-router";
+import { List } from "immutable";
 
 import connectToStores from "alt/utils/connectToStores";
 
@@ -46,7 +47,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-    routes: React.PropTypes.array.isRequired,
+    routes: React.PropTypes.instanceOf(List).isRequired,
     time: React.PropTypes.string,
     data: React.PropTypes.object.isRequired
 };
