@@ -45,4 +45,9 @@ class App extends React.Component {
     }
 }
 
+App.propTypes = {
+    time: React.PropTypes.string,
+    data: React.PropTypes.object.isRequired
+};
+
 export default { connectToStores }.connectToStores(App);
