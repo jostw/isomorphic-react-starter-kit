@@ -24,7 +24,12 @@
   "keywords": [
     "isomorphic",
     "react",
-    "flux"
+    "react-router",
+    "flux",
+    "alt",
+    "immutable",
+    "babel",
+    "webpack"
   ],
   "author": "jos <mail@jos.tw>",
   "license": "MIT",
