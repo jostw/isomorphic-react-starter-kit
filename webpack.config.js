@@ -11,6 +11,7 @@
 
 var path = require("path");
 var webpack = require("webpack");
+var autoprefixer = require("autoprefixer-core");
 
 var config = require(path.resolve(__dirname, "config"));
 
@@ -41,13 +42,17 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: "style!css"
+                loader: "style!css!postcss"
             }, {
                 test: /\.jsx?$/,
                 exclude: /node_modules|modernizr|plugins/,
                 loader: "jscs!eslint!jshint!babel"
             }
         ]
+    },
+
+    postcss: function() {
+        return [autoprefixer];
     },
 
     plugins: [

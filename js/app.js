@@ -15,6 +15,8 @@ import "imports?this=>window!modernizr";
 import "../css/vendor/boilerplate.css";
 import "./vendor/plugins";
 
+import "../css/style.css";
+
 import React from "react";
 import Router from "react-router";
 
