@@ -1,6 +1,8 @@
 {
   "watch": [
-    "app.js"
+    "app.js",
+    "js/app.js",
+    "js/app/"
   ],
   "ext": "js",
   "execMap": {

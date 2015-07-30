@@ -25,7 +25,7 @@ module.exports = {
             if (isDev) {
                 script = [
                     "webpack-dev-server/client?http://localhost:" + config.port.webpack,
-                    "webpack/hot/dev-server",
+                    "webpack/hot/only-dev-server",
                     script
                 ];
             }
@@ -46,7 +46,7 @@ module.exports = {
             }, {
                 test: /\.jsx?$/,
                 exclude: /node_modules|modernizr|plugins/,
-                loader: "jscs!eslint!jshint!babel"
+                loader: "react-hot!jscs!eslint!jshint!babel"
             }
         ]
     },
