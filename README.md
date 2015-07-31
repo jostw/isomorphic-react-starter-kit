@@ -2,6 +2,7 @@
 
 This project shows how to build an isomorphic application with React and Flux.
 It is just another React starter kit includes some cool stuff.
+Most of the codes are written in ES6 syntax.
 If you are having trouble building isomorphic application with React and Flux, maybe you can find some answers in the codebase.
 
 ## Overview
