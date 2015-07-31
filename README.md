@@ -41,7 +41,7 @@ git clone https://github.com/jostw/isomorphic-react-starter-kit.git
     - ` js/app/config.js `: shared configurations
     - ` js/app/routes.js `: routing settings
     - ` js/app/request.js `: send ajax request with [SuperAgent](http://visionmedia.github.io/superagent/)
-    - ` js/components/*.jsx `: react components
+    - ` js/components/*.jsx `: react and react-router components
 
 ## Contribute
 
